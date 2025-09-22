@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Keep your mockup assets in /public; adjust this link if your CSS lives elsewhere -->
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>{{title}}</h1>
+      <p>{{tagline}}</p>
+      <nav>
+        <ul>
+          {{#each nav}}
+            <li><a href="{{href}}">{{label}}</a></li>
+          {{/each}}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>This page is rendered with Handlebars using an MVC structure.</p>
+    </main>
+  </body>
+</html>
