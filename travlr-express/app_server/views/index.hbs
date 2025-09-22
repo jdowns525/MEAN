@@ -4,23 +4,25 @@
     <meta charset="utf-8">
     <title>{{title}}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- Keep your mockup assets in /public; adjust this link if your CSS lives elsewhere -->
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
     <header>
       <h1>{{title}}</h1>
       <p>{{tagline}}</p>
-      <nav>
-        <ul>
-          {{#each nav}}
-            <li><a href="{{href}}">{{label}}</a></li>
-          {{/each}}
-        </ul>
-      </nav>
     </header>
+
     <main>
-      <p>This page is rendered with Handlebars using an MVC structure.</p>
+      <h2>Available Trips</h2>
+      <ul>
+        {{#each trips}}
+          <li>
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <p><strong>Price: {{price}}</strong></p>
+          </li>
+        {{/each}}
+      </ul>
     </main>
   </body>
 </html>

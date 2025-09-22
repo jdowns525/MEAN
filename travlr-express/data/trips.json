@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Paris Getaway",
+    "description": "Explore the city of lights with our exclusive travel package.",
+    "price": "$1,800"
+  },
+  {
+    "title": "Beach Escape",
+    "description": "Relax on white sand beaches and enjoy tropical drinks by the ocean.",
+    "price": "$1,200"
+  },
+  {
+    "title": "Mountain Adventure",
+    "description": "Hike the Rockies with professional guides and enjoy cabin lodging.",
+    "price": "$1,500"
+  }
+]
