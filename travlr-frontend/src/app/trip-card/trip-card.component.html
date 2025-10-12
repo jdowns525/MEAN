@@ -1,0 +1,15 @@
+<div class="card">
+  <img [src]="trip.image" alt="{{ trip.name }}" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{ trip.name }}</h5>
+    <p class="card-text">{{ trip.description }}</p>
+    <ul>
+      <li><strong>Code:</strong> {{ trip.code }}</li>
+      <li><strong>Length:</strong> {{ trip.length }} days</li>
+      <li><strong>Start Date:</strong> {{ trip.start }}</li>
+      <li><strong>Resort:</strong> {{ trip.resort }}</li>
+      <li><strong>Cost:</strong> ${{ trip.perPerson }}</li>
+    </ul>
+  </div>
+</div>
+
