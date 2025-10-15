@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
@@ -15,14 +19,13 @@ export class LoginComponent {
 
   onSubmit() {
     this.auth.login({ email: this.email, password: this.password }).subscribe({
-      next: (res) => {
-        this.auth.saveToken(res.token);
-        this.router.navigate(['/']);
+      next: (res: any) => {
+        this.auth.setToken(res.token);
+        this.router.navigate(['/trips']);
       },
       error: () => {
-        this.error = 'Invalid credentials';
+        this.error = 'Invalid login credentials';
       }
     });
   }
 }
-
