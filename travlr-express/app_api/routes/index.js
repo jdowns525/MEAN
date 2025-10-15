@@ -1,13 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const tripController = require('../controllers/trips');
+const jwt = require('jsonwebtoken');
+const authController = require('../../controllers/auth');
+const tripController = require('../../controllers/trips');
+const { authenticate } = require('../../middleware/auth');
 
-// CRUD Routes
-router.get('/trips', tripController.tripsList);
-router.get('/trips/:tripCode', tripController.tripsReadOne);
-router.post('/trips', tripController.tripsCreate);
-router.put('/trips/:tripCode', tripController.tripsUpdate);
-router.delete('/trips/:tripCode', tripController.tripsDelete);
+router.post('/login', authController.login);
+
+router.get('/trips', tripController.getTrips);
+router.post('/trips', authenticate, tripController.addTrip);
+router.put('/trips/:tripCode', authenticate, tripController.updateTrip);
+router.delete('/trips/:tripCode', authenticate, tripController.deleteTrip);
 
 module.exports = router;
+
 
